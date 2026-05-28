@@ -5,5 +5,6 @@ book_type: ["translated-story"]
 status: "published"
 order: 46
 original_author: "رابرت شکلی"
-publisher: "شگفتزار"
+publisher: "فضای استعاره"
+link: "https://metaphorspace.com/shoes/"
 ---
