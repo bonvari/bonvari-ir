@@ -23,5 +23,6 @@
             {{ with $book.Params.year }}<span>{{ . }}</span>{{ end }}
         </div>
         {{ with $book.Params.notes }}<p class="book-card__author" style="margin-top:0.4rem">{{ . }}</p>{{ end }}
+        {{ with $book.Params.link }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.5rem;font-size:0.85rem">{{ with $book.Params.link_text }}{{ . }}{{ else }}↗ لینک{{ end }}</a>{{ end }}
     </div>
 </article>
