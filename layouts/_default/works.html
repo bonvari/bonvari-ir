@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ $books := where .Site.RegularPages "Type" "books" }}
+<div class="container container--narrow"><div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div></div>
+<div class="container">
+    {{ $authored := sort (where (where $books "Params.book_type" "intersect" (slice "authored")) "Params.status" "published") "Params.order" "asc" }}
+    {{ if $authored }}
+    <section class="section" style="padding-top:0"><span class="section__label">{{ i18n "published_books" }}</span>
+        <div class="book-grid">{{ range $authored }}{{ partial "book-card.html" . }}{{ end }}</div>
+    </section>
+    {{ end }}
+
+    {{ $stories := sort (where (where $books "Params.book_type" "intersect" (slice "short-story")) "Params.status" "published") "Params.order" "asc" }}
+    {{ if $stories }}
+    <section class="section"><span class="section__label">{{ i18n "published_short_stories" }}</span><h2 class="section__title">{{ i18n "short_stories" }}</h2>
+        <ul class="story-list">
+            {{ range $stories }}<li><span class="story-list__title">{{ .Title }}</span>{{ with .Params.publisher }}<span class="story-list__pub">{{ . }}</span>{{ end }}</li>{{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
+    {{ $wip := sort (where (where (where $books "Params.book_type" "intersect" (slice "authored")) "Params.status" "in" (slice "in-progress" "editing")) "Params.order" "asc") "Params.order" "asc" }}
+    {{ if $wip }}
+    <section class="section"><span class="section__label">{{ i18n "in_progress_label" }}</span><h2 class="section__title">{{ i18n "active_projects" }}</h2>
+        <div class="book-grid">{{ range $wip }}{{ partial "book-card.html" . }}{{ end }}</div>
+    </section>
+    {{ end }}
+</div>
+{{ end }}

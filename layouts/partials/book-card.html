@@ -1,0 +1,27 @@
+{{- $book := . -}}
+{{- $type := index $book.Params.book_type 0 -}}
+{{- $status := $book.Params.status -}}
+<article class="book-card" data-type="{{ $type }}" data-status="{{ $status }}">
+    <div class="book-card__cover">
+        {{ with $book.Params.cover }}
+        <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $book.Title }}" loading="lazy">
+        {{ else }}
+        <div class="book-card__placeholder"><span class="book-card__placeholder-title">{{ $book.Title }}</span></div>
+        {{ end }}
+    </div>
+    <div class="book-card__body">
+        {{- $badge := "" -}}
+        {{- if eq $status "in-progress" }}{{ $badge = i18n "in_progress_label" }}
+        {{- else if eq $status "editing" }}{{ $badge = i18n "badge_editing" }}
+        {{- else if eq $type "translation" }}{{ $badge = i18n "badge_translation" }}
+        {{- else if eq $type "authored" }}{{ $badge = i18n "badge_authored" }}{{ end -}}
+        {{ with $badge }}<span class="book-card__badge">{{ . }}</span>{{ end }}
+        <h3 class="book-card__title"><a href="{{ $book.RelPermalink }}">{{ $book.Title }}</a></h3>
+        {{ with $book.Params.original_author }}<p class="book-card__author">{{ . }}</p>{{ end }}
+        <div class="book-card__meta">
+            {{ with $book.Params.publisher }}<span>{{ . }}</span>{{ end }}
+            {{ with $book.Params.year }}<span>{{ . }}</span>{{ end }}
+        </div>
+        {{ with $book.Params.notes }}<p class="book-card__author" style="margin-top:0.4rem">{{ . }}</p>{{ end }}
+    </div>
+</article>

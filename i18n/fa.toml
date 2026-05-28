@@ -1,0 +1,73 @@
+skip_to_content = "رفتن به محتوا"
+toggle_menu = "باز/بستن منو"
+main_menu = "منوی اصلی"
+copyright = "© ۱۴۰۵ مهدی بنواری. همهٔ حقوق محفوظ است."
+
+[hero_label]
+other = "نویسنده · مترجم · پژوهشگر"
+[cta_works]
+other = "آثار تألیفی"
+[cta_translations]
+other = "ترجمه‌ها"
+[featured_label]
+other = "اثر برجسته"
+[featured_badge]
+other = "✦ نخستین رمان"
+[latest_notes_label]
+other = "آخرین یادداشت‌ها"
+[notes_title]
+other = "یادداشت‌ها"
+[all_notes]
+other = "همهٔ یادداشت‌ها"
+[books_label]
+other = "کتاب‌ها"
+[latest_books]
+other = "آخرین کتاب‌ها"
+[all_books]
+other = "همهٔ کتاب‌ها"
+[publisher_label]
+other = "ناشر"
+[year_label]
+other = "سال"
+[illustrator_label]
+other = "تصویرگر"
+[published_books]
+other = "کتاب‌های منتشرشده"
+[translated_books]
+other = "کتاب‌های ترجمه‌شده"
+[short_stories]
+other = "داستان‌های کوتاه"
+[published_short_stories]
+other = "داستان‌های کوتاه منتشرشده"
+[translated_short_stories]
+other = "داستان‌های کوتاه ترجمه‌شده"
+[translated_short_stories_title]
+other = "ترجمهٔ داستان کوتاه"
+[in_progress_label]
+other = "در دست نگارش"
+[in_progress_translation_label]
+other = "در دست ترجمه"
+[active_projects]
+other = "پروژه‌های فعال"
+[active_translation_projects]
+other = "پروژه‌های فعال ترجمه"
+[badge_authored]
+other = "تألیف"
+[badge_translation]
+other = "ترجمه"
+[badge_editing]
+other = "در دست ویرایش"
+[gallery_empty]
+other = "به‌زودی آثار بصری در این بخش اضافه خواهد شد."
+[gallery_all]
+other = "همه"
+[notes_empty]
+other = "هنوز یادداشتی منتشر نشده."
+[notfound_text]
+other = "صفحه‌ای با این آدرس وجود ندارد."
+[back_home]
+other = "بازگشت به خانه"
+[professional_activities]
+other = "فعالیت‌های حرفه‌ای"
+[english_bio]
+other = "English Bio →"

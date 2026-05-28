@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div>
+    <div class="entry-content">
+        {{ .Content }}
+        {{ with .Params.timeline }}
+        <div class="timeline">
+            <h2 class="timeline__title">{{ i18n "professional_activities" }}</h2>
+            {{ range . }}
+            <div class="timeline__item">
+                <span class="timeline__period">{{ .period }}</span>
+                <div class="timeline__content"><p class="timeline__role">{{ .role }}</p><p class="timeline__org">{{ .org }}</p></div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+        <div style="margin-top:2.5rem"><div class="footer-social">
+            <a href="{{ .Site.Params.social.instagram }}" target="_blank" rel="noopener">Instagram</a>
+            <a href="{{ .Site.Params.social.goodreads }}" target="_blank" rel="noopener">Goodreads</a>
+            {{ if eq .Site.Language.Lang "fa" }}
+            <a href="{{ "en/" | relURL }}">{{ i18n "english_bio" }}</a>
+            {{ else }}
+            <a href="{{ .Site.Params.social.metaphorspace }}" target="_blank" rel="noopener">Metaphor Space</a>
+            <a href="{{ "/" | relURL }}">{{ i18n "persian_bio" }}</a>
+            {{ end }}
+        </div></div>
+    </div>
+</div>
+{{ end }}

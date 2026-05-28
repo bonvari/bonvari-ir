@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{ $books := where .Site.RegularPages "Type" "books" }}
+<section class="hero">
+    <div class="container">
+        <span class="hero__label">{{ i18n "hero_label" }}</span>
+        <h1 class="hero__title">{{ .Site.Title }}</h1>
+        <p class="hero__subtitle">{{ .Site.Params.description }}</p>
+        <div class="hero__cta">
+            <a href="{{ "works/" | relLangURL }}" class="btn btn--primary">{{ i18n "cta_works" }}</a>
+            <a href="{{ "translations/" | relLangURL }}" class="btn btn--outline">{{ i18n "cta_translations" }}</a>
+        </div>
+    </div>
+</section>
+
+{{ $authored := where (where $books "Params.book_type" "intersect" (slice "authored")) "Params.status" "published" }}
+{{ $featured := first 1 (sort $authored "Params.order" "asc") }}
+{{ range $featured }}
+<section class="section"><div class="container">
+    <span class="section__label">{{ i18n "featured_label" }}</span>
+    <div class="featured-work">
+        <div class="featured-work__cover">
+            {{ with .Params.cover }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+            {{ else }}<div class="book-card__placeholder"><span class="book-card__placeholder-title">{{ .Title }}</span></div>{{ end }}
+        </div>
+        <div>
+            <span class="featured-work__badge">{{ i18n "featured_badge" }}</span>
+            <h2 class="featured-work__title">{{ .Title }}</h2>
+            {{ with .Params.notes }}<p class="featured-work__subtitle">{{ . }}</p>{{ end }}
+            {{ with .Params.genre }}<p class="featured-work__genre">{{ . }}</p>{{ end }}
+            {{ with .Params.summary }}<p class="featured-work__desc">{{ . }}</p>{{ end }}
+            <div class="featured-work__meta">
+                {{ with .Params.publisher }}<span>{{ i18n "publisher_label" }}: {{ . }}</span>{{ end }}
+                {{ with .Params.year }}<span>{{ i18n "year_label" }}: {{ . }}</span>{{ end }}
+                {{ with .Params.illustrator }}<span>{{ i18n "illustrator_label" }}: {{ . }}</span>{{ end }}
+            </div>
+        </div>
+    </div>
+</div></section>
+{{ end }}
+
+{{ $notes := first 3 (where .Site.RegularPages "Type" "notes") }}
+{{ if $notes }}
+<section class="section"><div class="container">
+    <span class="section__label">{{ i18n "latest_notes_label" }}</span>
+    <h2 class="section__title">{{ i18n "notes_title" }}</h2>
+    <div class="post-grid">
+        {{ range $notes }}
+        <article class="post-card">
+            <div class="post-card__body">
+                <span class="post-card__date">{{ .Date | time.Format "2 January 2006" }}</span>
+                <h3 class="post-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <p class="post-card__excerpt">{{ .Summary | plainify | truncate 120 }}</p>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+    <a href="{{ "notes/" | relLangURL }}" class="section__more">{{ i18n "all_notes" }}</a>
+</div></section>
+{{ end }}
+
+{{ $recent := first 4 (sort (where $books "Params.status" "published") "Params.order" "asc") }}
+{{ if $recent }}
+<section class="section"><div class="container">
+    <span class="section__label">{{ i18n "books_label" }}</span>
+    <h2 class="section__title">{{ i18n "latest_books" }}</h2>
+    <div class="book-grid">
+        {{ range $recent }}{{ partial "book-card.html" . }}{{ end }}
+    </div>
+    <a href="{{ "translations/" | relLangURL }}" class="section__more">{{ i18n "all_books" }}</a>
+</div></section>
+{{ end }}
+{{ end }}

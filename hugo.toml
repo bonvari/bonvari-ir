@@ -1,0 +1,79 @@
+baseURL = "https://bonvari.ir/"
+title = "مهدی بنواری"
+defaultContentLanguage = "fa"
+defaultContentLanguageInSubdir = false
+enableEmoji = true
+enableRobotsTXT = true
+
+# Pretty URLs: /works/ instead of /works/index.html
+[permalinks]
+  books = "/book/:slug/"
+  notes = "/notes/:slug/"
+
+[taxonomies]
+  book_type = "book_types"
+  status = "statuses"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+# ---------------------------------------------------------------------------
+# Languages
+# ---------------------------------------------------------------------------
+[languages]
+  [languages.fa]
+    locale = "fa-IR"
+    label = "فارسی"
+    direction = "rtl"
+    contentDir = "content/fa"
+    weight = 1
+    title = "مهدی بنواری"
+    [languages.fa.params]
+      description = "نویسنده، مترجم و پژوهشگر ادبیات گمانه‌زن"
+
+  [languages.en]
+    locale = "en-US"
+    label = "English"
+    direction = "ltr"
+    contentDir = "content/en"
+    weight = 2
+    title = "Mehdi Bonvari"
+    [languages.en.params]
+      description = "Author, translator and speculative fiction researcher"
+
+# ---------------------------------------------------------------------------
+# Menus (per language)
+# ---------------------------------------------------------------------------
+[menu]
+  [[menu.fa]]
+    name = "خانه"
+    url = "/"
+    weight = 1
+  [[menu.fa]]
+    name = "تألیف"
+    url = "/works/"
+    weight = 2
+  [[menu.fa]]
+    name = "ترجمه‌ها"
+    url = "/translations/"
+    weight = 3
+  [[menu.fa]]
+    name = "گالری"
+    url = "/gallery/"
+    weight = 4
+  [[menu.fa]]
+    name = "یادداشت‌ها"
+    url = "/notes/"
+    weight = 5
+  [[menu.fa]]
+    name = "دربارهٔ من"
+    url = "/about/"
+    weight = 6
+
+[params]
+  author = "مهدی بنواری"
+  authorEn = "Mehdi Bonvari"
+  [params.social]
+    instagram = "https://instagram.com/mehdi.bonvari"
+    goodreads = "https://goodreads.com/author/show/7205336.Mehdi_Bonvari"
+    metaphorspace = "https://metaphorspace.com/tag/mehdi-bonvari/"

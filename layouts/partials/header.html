@@ -1,0 +1,16 @@
+<header class="site-header">
+    <div class="container">
+        <a href="{{ .Site.Home.RelPermalink }}" class="site-logo">{{ .Site.Title }}</a>
+
+        <button class="nav-toggle" aria-label="{{ i18n "toggle_menu" }}" aria-expanded="false">☰</button>
+
+        <nav class="site-nav" role="navigation" aria-label="{{ i18n "main_menu" }}">
+            <ul>
+                {{ range .Site.Menus.fa }}
+                <li><a href="{{ .URL | relLangURL }}"{{ if $.IsMenuCurrent "fa" . }} class="current"{{ end }}>{{ .Name }}</a></li>
+                {{ end }}
+                {{ partial "lang-switcher.html" . }}
+            </ul>
+        </nav>
+    </div>
+</header>

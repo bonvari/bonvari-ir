@@ -1,0 +1,6 @@
+{{- /* Link to the English bio page from fa, and back to fa home from en */ -}}
+{{- if eq .Site.Language.Lang "fa" -}}
+<li><a href="{{ "en/" | relLangURL }}">English</a></li>
+{{- else -}}
+<li><a href="{{ "/" | relURL }}">فارسی</a></li>
+{{- end -}}

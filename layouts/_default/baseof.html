@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.Direction }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ partial "head.html" . }}
+</head>
+<body class="{{ if eq .Site.Language.Direction "ltr" }}ltr-page{{ end }}">
+<a class="skip-to-content" href="#main-content">{{ i18n "skip_to_content" }}</a>
+
+{{ partial "header.html" . }}
+
+<main id="main-content">
+    {{ block "main" . }}{{ end }}
+</main>
+
+{{ partial "footer.html" . }}
+
+<script src="{{ "js/nav.js" | relURL }}" defer></script>
+{{ block "scripts" . }}{{ end }}
+</body>
+</html>

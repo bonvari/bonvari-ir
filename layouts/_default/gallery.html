@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="page-header__date">{{ . }}</p>{{ end }}</div>
+</div>
+<div class="container">
+    <div class="filter-bar" id="gallery-filter">
+        <button class="is-active" data-filter="all">{{ i18n "gallery_all" }}</button>
+        {{ range .Params.categories }}
+        <button data-filter="{{ .slug }}">{{ .name }}</button>
+        {{ end }}
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+        {{ $items := .Params.items }}
+        {{ if $items }}
+        {{ range $items }}
+        <div class="gallery-item" data-category="{{ .category }}" data-lightbox-src="{{ strings.TrimPrefix "/" .image | relURL }}" data-caption="{{ .caption }}">
+            <img src="{{ strings.TrimPrefix "/" .image | relURL }}" alt="{{ .caption }}" loading="lazy">
+            <div class="gallery-item__overlay"><span class="gallery-item__caption">{{ .caption }}</span></div>
+        </div>
+        {{ end }}
+        {{ else }}
+        <p style="color:var(--color-text-muted)">{{ i18n "gallery_empty" }}</p>
+        {{ end }}
+    </div>
+</div>
+<div class="lightbox" id="lightbox"><button class="lightbox__close" aria-label="بستن">×</button><img src="" alt=""><p class="lightbox__caption"></p></div>
+{{ end }}
+{{ define "scripts" }}
+<script src="{{ "js/filter.js" | relURL }}" defer></script>
+<script src="{{ "js/lightbox.js" | relURL }}" defer></script>
+{{ end }}

@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header">
+        <h1 class="page-header__title">{{ .Title }}</h1>
+        {{ with .Params.original_title }}<p class="page-header__date">{{ . }}</p>{{ end }}
+    </div>
+    <div class="featured-work" style="margin-bottom:2rem">
+        <div class="featured-work__cover">
+            {{ with .Params.cover }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Title }}">
+            {{ else }}<div class="book-card__placeholder"><span class="book-card__placeholder-title">{{ .Title }}</span></div>{{ end }}
+        </div>
+        <div>
+            {{ with .Params.original_author }}<p class="featured-work__subtitle">{{ . }}</p>{{ end }}
+            {{ with .Params.genre }}<p class="featured-work__genre">{{ . }}</p>{{ end }}
+            <div class="featured-work__meta">
+                {{ with .Params.publisher }}<span>{{ i18n "publisher_label" }}: {{ . }}</span>{{ end }}
+                {{ with .Params.year }}<span>{{ i18n "year_label" }}: {{ . }}</span>{{ end }}
+                {{ with .Params.illustrator }}<span>{{ i18n "illustrator_label" }}: {{ . }}</span>{{ end }}
+            </div>
+            {{ with .Params.notes }}<p class="featured-work__desc" style="margin-top:1rem">{{ . }}</p>{{ end }}
+        </div>
+    </div>
+    {{ with .Content }}<article class="entry-content">{{ . }}</article>{{ end }}
+</div>
+{{ end }}
