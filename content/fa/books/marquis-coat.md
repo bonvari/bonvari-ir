@@ -10,4 +10,5 @@ publisher: "پریان"
 year: "۱۳۹۹"
 genre: "فانتزی"
 notes: "چاپ دوم و سوم: ۱۴۰۲"
+cover: "/img/covers/marquis-coat.jpg"
 ---

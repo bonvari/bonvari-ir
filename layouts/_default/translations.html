@@ -17,7 +17,7 @@
             {{ $bits := slice }}
             {{ with .Params.original_author }}{{ $bits = $bits | append . }}{{ end }}
             {{ with .Params.publisher }}{{ $bits = $bits | append . }}{{ end }}
-            <li><span class="story-list__title">{{ .Title }}</span><span class="story-list__pub">{{ delimit $bits " · " }}</span></li>
+            <li><span class="story-list__title">{{ .Title }}</span><span class="story-list__pub">{{ delimit $bits " · " }}{{ if .Params.link }} · <a href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Params.link_text | default "داستان را از اینجا بخوانید ←" }}</a>{{ end }}</span></li>
             {{ end }}
         </ul>
     </section>
