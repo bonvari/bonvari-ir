@@ -6,4 +6,6 @@ status: "published"
 order: 48
 original_author: "جک ونس"
 publisher: "شگفتزار"
+link: "https://metaphorspace.com/mazirian-the-magician/"
+link_text: "داستان را از اینجا بخوانید ←"
 ---
