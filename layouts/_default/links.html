@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div>
+</div>
+<div class="container">
+    {{ range .Params.sites }}
+    <section class="section links-site" style="{{ if not (eq . (index $.Params.sites 0)) }}padding-top:0{{ end }}">
+        <div class="links-site__header">
+            <h2 class="links-site__name">
+                <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+            </h2>
+            <p class="links-site__desc">{{ .description }}</p>
+        </div>
+        <ul class="media-article-list">
+            {{ range .articles }}
+            <li class="media-article-item">
+                <a href="{{ .url }}" target="_blank" rel="noopener" class="media-article-item__title">{{ .title }}{{ with .type }} <span class="media-article-item__type">{{ . }}</span>{{ end }}</a>
+                {{ with .summary }}<p class="media-article-item__summary">{{ . }}</p>{{ end }}
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+</div>
+{{ end }}

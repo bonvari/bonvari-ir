@@ -373,6 +373,13 @@ body.ltr-page .about-intro { border-inline-start: none; border-left: 3px solid v
 
 .media-placeholder { color: var(--color-text-muted); }
 
+.links-site { border-top: 1px solid var(--color-border); padding-top: 2.5rem; margin-top: 2.5rem; }
+.links-site:first-child { border-top: none; margin-top: 0; }
+.links-site__name { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.links-site__name a { color: inherit; }
+.links-site__name a:hover { color: var(--color-accent); }
+.links-site__desc { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.25rem; }
+
 /* =========================================
    GALLERY
    ========================================= */

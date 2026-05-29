@@ -62,13 +62,17 @@ enableRobotsTXT = true
     url = "/media/"
     weight = 4
   [[menu.fa]]
+    name = "پیوندها"
+    url = "/links/"
+    weight = 5
+  [[menu.fa]]
     name = "یادداشت‌ها"
     url = "/notes/"
-    weight = 5
+    weight = 6
   [[menu.fa]]
     name = "دربارهٔ من"
     url = "/about/"
-    weight = 6
+    weight = 7
 
 [params]
   author = "مهدی بنواری"
