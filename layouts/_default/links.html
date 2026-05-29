@@ -4,7 +4,7 @@
 </div>
 <div class="container">
     {{ range .Params.sites }}
-    <section class="section links-site" style="{{ if not (eq . (index $.Params.sites 0)) }}padding-top:0{{ end }}">
+    <section class="section links-site">
         <div class="links-site__header">
             <h2 class="links-site__name">
                 <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
