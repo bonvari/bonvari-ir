@@ -14,7 +14,7 @@ videos:
     placeholder: true
 
 article_groups:
-  - title: "مقالات در مجموعه سوید"
+  - title: "مقالات در مجلهٔ اینترنتی سفید"
     source: "3feed.ir"
     articles:
       - title: "نقد آلترد کربن: شبه سایبرپانک"
