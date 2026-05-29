@@ -58,8 +58,8 @@ enableRobotsTXT = true
     url = "/translations/"
     weight = 3
   [[menu.fa]]
-    name = "گالری"
-    url = "/gallery/"
+    name = "رسانه"
+    url = "/media/"
     weight = 4
   [[menu.fa]]
     name = "یادداشت‌ها"

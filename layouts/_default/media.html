@@ -1,0 +1,93 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div>
+</div>
+<div class="container">
+
+    {{/* ── ویدیو ── */}}
+    {{ with .Params.videos }}
+    <section class="section" style="padding-top:0">
+        <span class="section__label">ویدیو</span>
+        <h2 class="section__title">ویدیوها</h2>
+        <div class="media-video-grid">
+            {{ range . }}
+            {{ if .placeholder }}
+            <div class="media-video-card media-video-card--placeholder">
+                <div class="media-video-card__thumb media-video-card__thumb--placeholder">
+                    <span class="media-video-card__soon">به‌زودی</span>
+                </div>
+                <div class="media-video-card__info">
+                    <p class="media-video-card__title">{{ .title }}</p>
+                    <p class="media-video-card__meta">{{ .channel }}{{ with .description }} · {{ . }}{{ end }}</p>
+                </div>
+            </div>
+            {{ else }}
+            <div class="media-video-card">
+                <div class="media-video-card__embed">
+                    <iframe src="https://www.youtube-nocookie.com/embed/{{ .id }}" title="{{ .title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="media-video-card__info">
+                    <p class="media-video-card__title">{{ .title }}</p>
+                    <p class="media-video-card__meta">{{ .channel }}{{ with .duration }} · {{ . }}{{ end }}{{ with .description }} · {{ . }}{{ end }}</p>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+
+    {{/* ── مقالات ── */}}
+    {{ with .Params.article_groups }}
+    <section class="section">
+        <span class="section__label">مقالات</span>
+        <h2 class="section__title">مقالات و نقدها</h2>
+        {{ range . }}
+        <div class="media-article-group">
+            <h3 class="media-article-group__title">{{ .title }}</h3>
+            <ul class="media-article-list">
+                {{ range .articles }}
+                <li class="media-article-item">
+                    <a href="{{ .url }}" target="_blank" rel="noopener" class="media-article-item__title">{{ .title }}{{ with .type }} <span class="media-article-item__type">{{ . }}</span>{{ end }}</a>
+                    {{ with .summary }}<p class="media-article-item__summary">{{ . }}</p>{{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    </section>
+    {{ end }}
+
+    {{/* ── عکس‌ها ── */}}
+    {{ with .Params.photos }}
+    <section class="section">
+        <span class="section__label">عکس‌ها</span>
+        <h2 class="section__title">تصویرسازی با هوش مصنوعی</h2>
+        {{ with .items }}
+        <div class="filter-bar" id="gallery-filter">
+            <button class="is-active" data-filter="all">{{ i18n "gallery_all" }}</button>
+            {{ range $.Params.photos.categories }}
+            <button data-filter="{{ .slug }}">{{ .name }}</button>
+            {{ end }}
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+            {{ range . }}
+            <div class="gallery-item" data-category="{{ .category }}" data-lightbox-src="{{ strings.TrimPrefix "/" .image | relURL }}" data-caption="{{ .caption }}">
+                <img src="{{ strings.TrimPrefix "/" .image | relURL }}" alt="{{ .caption }}" loading="lazy">
+                <div class="gallery-item__overlay"><span class="gallery-item__caption">{{ .caption }}</span></div>
+            </div>
+            {{ end }}
+        </div>
+        {{ else }}
+        <p class="media-placeholder">{{ i18n "gallery_empty" }}</p>
+        {{ end }}
+    </section>
+    {{ end }}
+
+</div>
+<div class="lightbox" id="lightbox"><button class="lightbox__close" aria-label="بستن">×</button><img src="" alt=""><p class="lightbox__caption"></p></div>
+{{ end }}
+{{ define "scripts" }}
+<script src="{{ "js/filter.js" | relURL }}" defer></script>
+<script src="{{ "js/lightbox.js" | relURL }}" defer></script>
+{{ end }}
