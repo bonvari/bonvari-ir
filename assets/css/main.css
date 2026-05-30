@@ -453,6 +453,7 @@ body.ltr-page .lightbox__close { left: auto; right: 1.5rem; }
 .footer-social a { color: var(--color-text-muted); font-size: 0.9rem; }
 .footer-social a:hover { color: var(--color-accent); }
 .footer-copy { font-size: 0.8rem; color: var(--color-text-muted); }
+.footer-img { display: block; margin: 0 auto 1.5rem; max-width: 160px; opacity: 0.75; }
 
 /* =========================================
    RESPONSIVE
