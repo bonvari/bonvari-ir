@@ -379,6 +379,7 @@ body.ltr-page .about-intro { border-inline-start: none; border-left: 3px solid v
 .links-site__name a { color: inherit; }
 .links-site__name a:hover { color: var(--color-accent); }
 .links-site__desc { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.25rem; }
+.media-article-item__author { font-size: 0.8rem; color: var(--color-text-muted); margin-right: 0.3rem; }
 
 /* =========================================
    GALLERY

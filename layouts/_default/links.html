@@ -14,7 +14,7 @@
         <ul class="media-article-list">
             {{ range .articles }}
             <li class="media-article-item">
-                <a href="{{ .url }}" target="_blank" rel="noopener" class="media-article-item__title">{{ .title }}{{ with .type }} <span class="media-article-item__type">{{ . }}</span>{{ end }}</a>
+                <a href="{{ .url }}" target="_blank" rel="noopener" class="media-article-item__title">{{ .title }}{{ with .type }} <span class="media-article-item__type">{{ . }}</span>{{ end }}</a>{{ with .author }} <span class="media-article-item__author">نوشتهٔ {{ . }}</span>{{ end }}
                 {{ with .summary }}<p class="media-article-item__summary">{{ . }}</p>{{ end }}
             </li>
             {{ end }}
