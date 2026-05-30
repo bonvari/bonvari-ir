@@ -12,3 +12,5 @@
 
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}">
