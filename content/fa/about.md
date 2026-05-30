@@ -1,6 +1,8 @@
 ---
 title: "دربارهٔ من"
 layout: "about"
+photo: "/img/author.jpg"
+photo_caption: "هنوز در جستجوی عکس رسمی‌تری هستم."
 timeline:
   - { period: "۱۳۸۷–۱۳۹۰", role: "سردبیر", org: "آکادمی فانتزی" }
   - { period: "۱۳۹۰–۱۳۹۲", role: "سردبیر", org: "گروه ادبیات گمانه‌زن ایران" }

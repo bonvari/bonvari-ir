@@ -2,6 +2,14 @@
 <div class="container container--narrow">
     <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div>
     <div class="entry-content">
+        {{ with .Params.photo }}
+        <div class="about-photo">
+            <figure class="about-photo__figure">
+                <img src="{{ . }}" alt="مهدی بنواری">
+                {{ with $.Params.photo_caption }}<figcaption class="about-photo__caption">{{ . }}</figcaption>{{ end }}
+            </figure>
+        </div>
+        {{ end }}
         {{ .Content }}
         {{ with .Params.timeline }}
         <div class="timeline">

@@ -330,7 +330,13 @@ body.ltr-page .section__more::after { content: '→'; }
 }
 body.ltr-page .about-intro { border-inline-start: none; border-left: 3px solid var(--color-accent); border-radius: 8px 0 0 8px; }
 
-.timeline { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border); }
+.about-photo { float: left; margin: 0 0 1.5rem 2rem; max-width: 220px; }
+body:not(.ltr-page) .about-photo { float: right; margin: 0 0 1.5rem 0; margin-left: 0; margin-right: 2rem; }
+.about-photo__figure { margin: 0; }
+.about-photo__figure img { width: 100%; border-radius: 12px; display: block; }
+.about-photo__caption { font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: 0.5rem; line-height: 1.5; }
+
+.timeline { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border); clear: both; }
 .timeline__title { margin-bottom: 1.5rem; }
 
 .timeline__item { display: flex; gap: 1.5rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); }
