@@ -330,11 +330,10 @@ body.ltr-page .section__more::after { content: '→'; }
 }
 body.ltr-page .about-intro { border-inline-start: none; border-left: 3px solid var(--color-accent); border-radius: 8px 0 0 8px; }
 
-.about-photo { float: left; margin: 0 0 1.5rem 2rem; max-width: 220px; }
-body:not(.ltr-page) .about-photo { float: right; margin: 0 0 1.5rem 0; margin-left: 0; margin-right: 2rem; }
+.about-photo { float: right; margin: 0 0 1.5rem 2rem; max-width: 200px; }
 .about-photo__figure { margin: 0; }
 .about-photo__figure img { width: 100%; border-radius: 12px; display: block; }
-.about-photo__caption { font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: 0.5rem; line-height: 1.5; }
+.about-photo__caption { font-size: 0.78rem; color: var(--color-text-muted); text-align: center; margin-top: 0.6rem; line-height: 1.6; }
 
 .timeline { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border); clear: both; }
 .timeline__title { margin-bottom: 1.5rem; }
@@ -378,6 +377,16 @@ body:not(.ltr-page) .about-photo { float: right; margin: 0 0 1.5rem 0; margin-le
 .media-article-item__summary { font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.25rem; line-height: 1.7; }
 
 .media-placeholder { color: var(--color-text-muted); }
+
+/* =========================================
+   LINKS PAGE
+   ========================================= */
+.links-site { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--color-border); }
+.links-site:last-child { border-bottom: none; }
+.links-site__name { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.links-site__name a { color: var(--color-text); }
+.links-site__name a:hover { color: var(--color-accent); }
+.links-site__desc { color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem; }
 
 .links-site { border-top: 1px solid var(--color-border); padding-top: 2.5rem; margin-top: 2.5rem; }
 .links-site:first-child { border-top: none; margin-top: 0; }
