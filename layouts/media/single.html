@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header">
+        <p class="page-header__date"><a href="{{ "/media/" | relLangURL }}">← رسانه</a></p>
+        <h1 class="page-header__title">{{ .Title }}</h1>
+    </div>
+    <div class="entry-content">
+        {{ .Content }}
+    </div>
+</div>
+
+{{ with .Params.youtube_id }}
+<div class="container container--narrow">
+    <div class="media-episode__embeds-section">
+        <p class="media-episode__watch-label">ویدیو را می‌توانید در یوتیوب{{ with $.Params.aparat_id }} یا آپارات{{ end }} ببینید:</p>
+        <div class="featured-episode__embeds{{ if not $.Params.aparat_id }} featured-episode__embeds--single{{ end }}">
+            <div class="featured-episode__embed">
+                <div class="featured-episode__embed-label">یوتیوب</div>
+                <div class="featured-episode__iframe-wrap">
+                    <iframe src="https://www.youtube-nocookie.com/embed/{{ . }}" title="{{ $.Title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+            {{ with $.Params.aparat_id }}
+            <div class="featured-episode__embed">
+                <div class="featured-episode__embed-label">آپارات</div>
+                <div class="featured-episode__iframe-wrap">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/{{ . }}/vt/frame?titleShow=true{{ with $.Params.aparat_playlist }}&playlist={{ . }}{{ end }}" allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy" frameborder="0"></iframe>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ end }}

@@ -378,11 +378,23 @@ body.ltr-page .about-intro { border-inline-start: none; border-left: 3px solid v
 
 .media-placeholder { color: var(--color-text-muted); }
 
-.featured-episode__content { margin-bottom: 2rem; }
-.featured-episode__content ul { padding-right: 1.2rem; }
-.featured-episode__content li { margin-bottom: 0.8rem; line-height: 1.8; }
-.featured-episode__watch-label { font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 1rem; }
+/* Media tiles (index) */
+.media-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.media-tile { display: flex; flex-direction: column; border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; background: var(--color-surface); text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s; }
+.media-tile:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+.media-tile__thumb { position: relative; padding-top: 56.25%; background: var(--color-bg-raised); }
+.media-tile__thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.media-tile__play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.5); opacity: 0; transition: opacity 0.2s; }
+.media-tile:hover .media-tile__play { opacity: 1; }
+.media-tile__body { padding: 1rem 1.1rem 1.2rem; flex: 1; }
+.media-tile__title { font-size: 1rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.4rem; }
+.media-tile__desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; }
+
+/* Media single (episode page) */
+.media-episode__embeds-section { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border); }
+.media-episode__watch-label { font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 1rem; }
 .featured-episode__embeds { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.featured-episode__embeds--single { grid-template-columns: 1fr; max-width: 640px; }
 .featured-episode__embed-label { font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted); margin-bottom: 0.4rem; }
 .featured-episode__iframe-wrap { position: relative; padding-top: 56.25%; border-radius: 10px; overflow: hidden; background: var(--color-bg-raised); }
 .featured-episode__iframe-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }

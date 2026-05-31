@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div>
+</div>
+<div class="container">
+    <div class="media-tiles">
+        {{ range .Pages.ByDate.Reverse }}
+        <a href="{{ .RelPermalink }}" class="media-tile">
+            {{ with .Params.youtube_id }}
+            <div class="media-tile__thumb">
+                <img src="https://img.youtube.com/vi/{{ . }}/mqdefault.jpg" alt="{{ $.Title }}" loading="lazy">
+                <span class="media-tile__play">▶</span>
+            </div>
+            {{ end }}
+            <div class="media-tile__body">
+                <h2 class="media-tile__title">{{ .Title }}</h2>
+                {{ with .Params.description }}<p class="media-tile__desc">{{ . }}</p>{{ end }}
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
