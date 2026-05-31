@@ -58,12 +58,12 @@ enableRobotsTXT = true
     url = "/translations/"
     weight = 3
   [[menu.fa]]
-    name = "رسانه"
-    url = "/media/"
+    name = "مقالات"
+    url = "/links/"
     weight = 4
   [[menu.fa]]
-    name = "پیوندها"
-    url = "/links/"
+    name = "رسانه"
+    url = "/media/"
     weight = 5
   [[menu.fa]]
     name = "یادداشت‌ها"
@@ -71,6 +71,35 @@ enableRobotsTXT = true
     weight = 6
   [[menu.fa]]
     name = "دربارهٔ من"
+    url = "/about/"
+    weight = 7
+
+  [[menu.en]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.en]]
+    name = "Works"
+    url = "/works/"
+    weight = 2
+  [[menu.en]]
+    name = "Translations"
+    url = "/translations/"
+    weight = 3
+  [[menu.en]]
+    name = "Articles"
+    url = "/links/"
+    weight = 4
+  [[menu.en]]
+    name = "Media"
+    url = "/media/"
+    weight = 5
+  [[menu.en]]
+    name = "Notes"
+    url = "/notes/"
+    weight = 6
+  [[menu.en]]
+    name = "About"
     url = "/about/"
     weight = 7
 

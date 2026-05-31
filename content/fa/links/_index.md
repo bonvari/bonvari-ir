@@ -1,5 +1,5 @@
 ---
-title: "پیوندها"
+title: "مقالات"
 layout: "links"
 link_groups:
   - name: "مجلهٔ اینترنتی سفید"
