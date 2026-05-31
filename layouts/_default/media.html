@@ -4,33 +4,32 @@
 </div>
 <div class="container">
 
-    {{/* ── اپیزود ویژه ── */}}
-    {{ with .Params.featured_episode }}
+    {{/* ── ویدیوها ── */}}
     <section class="section" style="padding-top:0">
         <span class="section__label">ویدیو</span>
-        <h2 class="section__title">{{ .title }}</h2>
-        <div class="featured-episode__content">
-            {{ $.Content }}
-        </div>
-        <div class="featured-episode__watch-label">ویدیو را می‌توانید در یوتیوب یا آپارات ببینید:</div>
-        <div class="featured-episode__embeds">
-            <div class="featured-episode__embed">
-                <div class="featured-episode__embed-label">یوتیوب</div>
-                <div class="featured-episode__iframe-wrap">
-                    <iframe src="https://www.youtube-nocookie.com/embed/{{ .youtube_id }}" title="{{ .title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
-                </div>
-            </div>
-            <div class="featured-episode__embed">
-                <div class="featured-episode__embed-label">آپارات</div>
-                <div class="featured-episode__iframe-wrap">
-                    <iframe src="https://www.aparat.com/video/video/embed/videohash/{{ .aparat_id }}/vt/frame?titleShow=true&playlist={{ .aparat_playlist }}" allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy" frameborder="0"></iframe>
-                </div>
-            </div>
+        <div class="media-episodes">
+            {{ .Content }}
         </div>
     </section>
-    {{ end }}
 
-    {{/* ── عکس‌ها ── */}}
+    {{/* ── کاشی فن‌آرت ── */}}
+    <section class="section">
+        <span class="section__label">فن‌آرت</span>
+        <h2 class="section__title">مسابقهٔ فن‌آرت رودخانه‌های مریخ</h2>
+        <a href="{{ "/fanart/" | relLangURL }}" class="fanart-tile">
+            <div class="fanart-tile__grid">
+                {{ range seq 1 4 }}
+                <img src="{{ printf "/img/fanart/fanart-%02d.jpg" . | relURL }}" alt="" loading="lazy">
+                {{ end }}
+            </div>
+            <div class="fanart-tile__overlay">
+                <span class="fanart-tile__label">مشاهدهٔ همهٔ آثار ←</span>
+                <p class="fanart-tile__sub">۱۶ اثر از هنرمندان شرکت‌کننده</p>
+            </div>
+        </a>
+    </section>
+
+    {{/* ── تصویرسازی هوش مصنوعی ── */}}
     {{ with .Params.photos }}
     <section class="section">
         <span class="section__label">عکس‌ها</span>
