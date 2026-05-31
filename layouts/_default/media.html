@@ -4,57 +4,29 @@
 </div>
 <div class="container">
 
-    {{/* ── ویدیو ── */}}
-    {{ with .Params.videos }}
+    {{/* ── اپیزود ویژه ── */}}
+    {{ with .Params.featured_episode }}
     <section class="section" style="padding-top:0">
         <span class="section__label">ویدیو</span>
-        <h2 class="section__title">ویدیوها</h2>
-        <div class="media-video-grid">
-            {{ range . }}
-            {{ if .placeholder }}
-            <div class="media-video-card media-video-card--placeholder">
-                <div class="media-video-card__thumb media-video-card__thumb--placeholder">
-                    <span class="media-video-card__soon">به‌زودی</span>
-                </div>
-                <div class="media-video-card__info">
-                    <p class="media-video-card__title">{{ .title }}</p>
-                    <p class="media-video-card__meta">{{ .channel }}{{ with .description }} · {{ . }}{{ end }}</p>
+        <h2 class="section__title">{{ .title }}</h2>
+        <div class="featured-episode__content">
+            {{ $.Content }}
+        </div>
+        <div class="featured-episode__watch-label">ویدیو را می‌توانید در یوتیوب یا آپارات ببینید:</div>
+        <div class="featured-episode__embeds">
+            <div class="featured-episode__embed">
+                <div class="featured-episode__embed-label">یوتیوب</div>
+                <div class="featured-episode__iframe-wrap">
+                    <iframe src="https://www.youtube-nocookie.com/embed/{{ .youtube_id }}" title="{{ .title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
                 </div>
             </div>
-            {{ else }}
-            <div class="media-video-card">
-                <div class="media-video-card__embed">
-                    <iframe src="https://www.youtube-nocookie.com/embed/{{ .id }}" title="{{ .title }}" frameborder="0" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="media-video-card__info">
-                    <p class="media-video-card__title">{{ .title }}</p>
-                    <p class="media-video-card__meta">{{ .channel }}{{ with .duration }} · {{ . }}{{ end }}{{ with .description }} · {{ . }}{{ end }}</p>
+            <div class="featured-episode__embed">
+                <div class="featured-episode__embed-label">آپارات</div>
+                <div class="featured-episode__iframe-wrap">
+                    <iframe src="https://www.aparat.com/video/video/embed/videohash/{{ .aparat_id }}/vt/frame?titleShow=true&playlist={{ .aparat_playlist }}" allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy" frameborder="0"></iframe>
                 </div>
             </div>
-            {{ end }}
-            {{ end }}
         </div>
-    </section>
-    {{ end }}
-
-    {{/* ── مقالات ── */}}
-    {{ with .Params.article_groups }}
-    <section class="section">
-        <span class="section__label">مقالات</span>
-        <h2 class="section__title">مقالات و نقدها</h2>
-        {{ range . }}
-        <div class="media-article-group">
-            <h3 class="media-article-group__title">{{ .title }}</h3>
-            <ul class="media-article-list">
-                {{ range .articles }}
-                <li class="media-article-item">
-                    <a href="{{ .url }}" target="_blank" rel="noopener" class="media-article-item__title">{{ .title }}{{ with .type }} <span class="media-article-item__type">{{ . }}</span>{{ end }}</a>
-                    {{ with .summary }}<p class="media-article-item__summary">{{ . }}</p>{{ end }}
-                </li>
-                {{ end }}
-            </ul>
-        </div>
-        {{ end }}
     </section>
     {{ end }}
 
