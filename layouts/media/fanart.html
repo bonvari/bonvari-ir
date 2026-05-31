@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header">
+        <p class="page-header__date"><a href="{{ "/media/" | relLangURL }}">← رسانه</a></p>
+        <h1 class="page-header__title">{{ .Title }}</h1>
+        {{ with .Params.description }}<p class="page-header__subtitle">{{ . }}</p>{{ end }}
+    </div>
+</div>
+<div class="container">
+    <div class="gallery-grid" id="gallery-grid">
+        {{ range .Params.images }}
+        <div class="gallery-item"
+             data-lightbox-src="{{ strings.TrimPrefix "/" .src | relURL }}"
+             data-caption="{{ .caption }}">
+            <img src="{{ strings.TrimPrefix "/" .src | relURL }}" alt="{{ .caption }}" loading="lazy">
+            <div class="gallery-item__overlay"><span class="gallery-item__caption">{{ .caption }}</span></div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+<div class="lightbox" id="lightbox"><button class="lightbox__close" aria-label="بستن">×</button><img src="" alt=""><p class="lightbox__caption"></p></div>
+{{ end }}
+{{ define "scripts" }}
+<script src="{{ "js/lightbox.js" | relURL }}" defer></script>
+{{ end }}
