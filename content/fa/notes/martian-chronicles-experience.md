@@ -1,7 +1,7 @@
 ---
 title: "تجربه‌های مریخی"
 slug: "martian-chronicles-experience"
-date: 2026-06-01
+date: 2021-02-07
 description: "پشت‌پرده‌ی ترجمهٔ حکایت‌های مریخ و سرنوشت پرفراز و نشیب آن"
 ---
 
