@@ -79,18 +79,18 @@ enableRobotsTXT = true
     url = "#"
     weight = 8
   [[menu.fa]]
-    name = "دانشنامه"
-    url = "https://wiki.sfdb.ir"
-    parent = "halghe"
-    weight = 1
-  [[menu.fa]]
     name = "فضای استعاره"
     url = "https://metaphorspace.com"
     parent = "halghe"
-    weight = 2
+    weight = 1
   [[menu.fa]]
     name = "مجلهٔ سفید"
     url = "https://3feed.ir"
+    parent = "halghe"
+    weight = 2
+  [[menu.fa]]
+    name = "دانشنامهٔ گمانه‌زن"
+    url = "https://wiki.sfdb.ir"
     parent = "halghe"
     weight = 3
 
