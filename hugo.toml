@@ -73,6 +73,10 @@ enableRobotsTXT = true
     name = "دربارهٔ من"
     url = "/about/"
     weight = 7
+  [[menu.fa]]
+    name = "دانشنامه"
+    url = "https://wiki.sfdb.ir"
+    weight = 8
 
   [[menu.en]]
     name = "Home"
