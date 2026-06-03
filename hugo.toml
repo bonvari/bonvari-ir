@@ -90,7 +90,7 @@ enableRobotsTXT = true
     weight = 2
   [[menu.fa]]
     name = "دانشنامهٔ گمانه‌زن"
-    url = "https://wiki.sfdb.ir"
+    url = "https://www.sfdb.ir"
     parent = "halghe"
     weight = 3
 
