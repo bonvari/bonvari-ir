@@ -188,6 +188,41 @@ main { flex: 1; }
     .site-nav li:last-child a { border-bottom: none; }
 }
 
+/* Dropdown menu */
+.has-dropdown { position: relative; }
+.dropdown-toggle {
+    background: none; border: none; cursor: pointer;
+    color: var(--color-text-muted); padding: 0.4rem 0.75rem;
+    border-radius: 6px; font-size: 0.9rem; font-family: inherit;
+    transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 0.25rem;
+}
+.dropdown-toggle:hover { color: var(--color-text); background: var(--color-bg-hover); }
+.dropdown-toggle[aria-expanded="true"] { color: var(--color-text); background: var(--color-bg-hover); }
+.dropdown-arrow { font-size: 0.7rem; transition: transform 0.2s; display: inline-block; }
+.dropdown-toggle[aria-expanded="true"] .dropdown-arrow { transform: rotate(180deg); }
+.dropdown-menu {
+    display: none; position: absolute; top: calc(100% + 4px);
+    background: var(--color-bg-raised); border: 1px solid var(--color-border);
+    border-radius: 10px; padding: 0.4rem; min-width: 160px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12); flex-direction: column; gap: 0; z-index: 1000;
+}
+body:not([dir="rtl"]) .dropdown-menu { left: 0; }
+[dir="rtl"] .dropdown-menu { right: 0; }
+.dropdown-menu.is-open { display: flex; }
+.dropdown-menu li { width: 100%; }
+.dropdown-menu a {
+    display: block; padding: 0.5rem 0.75rem; border-radius: 6px;
+    color: var(--color-text-muted); font-size: 0.9rem; white-space: nowrap;
+}
+.dropdown-menu a:hover { color: var(--color-text); background: var(--color-bg-hover); }
+
+@media (max-width: 768px) {
+    .dropdown-menu { position: static; border: none; border-radius: 0; box-shadow: none; padding: 0; background: transparent; }
+    .dropdown-menu.is-open { display: flex; }
+    .dropdown-menu a { padding: 0.75rem 2rem; border-bottom: 1px solid var(--color-border); border-radius: 0; }
+    .dropdown-toggle { width: 100%; padding: 0.75rem; border-radius: 0; border-bottom: 1px solid var(--color-border); justify-content: space-between; }
+}
+
 /* =========================================
    HERO
    ========================================= */

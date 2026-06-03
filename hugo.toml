@@ -74,9 +74,25 @@ enableRobotsTXT = true
     url = "/about/"
     weight = 7
   [[menu.fa]]
+    name = "حلقهٔ رندان"
+    identifier = "halghe"
+    url = "#"
+    weight = 8
+  [[menu.fa]]
     name = "دانشنامه"
     url = "https://wiki.sfdb.ir"
-    weight = 8
+    parent = "halghe"
+    weight = 1
+  [[menu.fa]]
+    name = "فضای استعاره"
+    url = "https://metaphorspace.com"
+    parent = "halghe"
+    weight = 2
+  [[menu.fa]]
+    name = "مجلهٔ سفید"
+    url = "https://3feed.ir"
+    parent = "halghe"
+    weight = 3
 
   [[menu.en]]
     name = "Home"
