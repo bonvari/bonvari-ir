@@ -89,10 +89,15 @@ enableRobotsTXT = true
     parent = "halghe"
     weight = 2
   [[menu.fa]]
+    name = "مجلهٔ دیستوپین"
+    url = "https://dys-topian.com/"
+    parent = "halghe"
+    weight = 3
+  [[menu.fa]]
     name = "دانشنامهٔ گمانه‌زن"
     url = "https://www.sfdb.ir"
     parent = "halghe"
-    weight = 3
+    weight = 4
 
   [[menu.en]]
     name = "Home"
