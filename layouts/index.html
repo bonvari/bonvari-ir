@@ -24,7 +24,7 @@
         </div>
         <div>
             <span class="featured-work__badge">{{ i18n "featured_badge" }}</span>
-            <h2 class="featured-work__title">{{ .Title }}</h2>
+            <h2 class="featured-work__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
             {{ with .Params.notes }}<p class="featured-work__subtitle">{{ . }}</p>{{ end }}
             {{ with .Params.genre }}<p class="featured-work__genre">{{ . }}</p>{{ end }}
             {{ with .Params.summary }}<p class="featured-work__desc">{{ . }}</p>{{ end }}
@@ -33,6 +33,7 @@
                 {{ with .Params.year }}<span>{{ i18n "year_label" }}: {{ . }}</span>{{ end }}
                 {{ with .Params.illustrator }}<span>{{ i18n "illustrator_label" }}: {{ . }}</span>{{ end }}
             </div>
+            <a href="{{ .RelPermalink }}" class="btn btn--outline" style="margin-top:1rem">{{ i18n "read_more" | default "بیشتر بخوانید" }} ←</a>
         </div>
     </div>
 </div></section>
