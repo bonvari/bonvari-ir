@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container container--narrow">
+    <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div>
+    <div class="entry-content">
+        <p>برای ارتباط با من می‌توانید از راه‌های زیر اقدام کنید.</p>
+
+        <div class="contact-links" style="margin-top:2rem;display:flex;flex-direction:column;gap:1rem">
+            <a href="mailto:mehdi.bonvari@gmail.com" class="btn btn--primary">ایمیل: mehdi.bonvari@gmail.com ←</a>
+            <a href="{{ .Site.Params.social.instagram }}" target="_blank" rel="noopener" class="btn btn--outline">اینستاگرام: mehdi.bonvari@</a>
+            <a href="{{ .Site.Params.social.goodreads }}" target="_blank" rel="noopener" class="btn btn--outline">گودریدز</a>
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -74,6 +74,10 @@ enableRobotsTXT = true
     url = "/about/"
     weight = 7
   [[menu.fa]]
+    name = "تماس"
+    url = "/contact/"
+    weight = 75
+  [[menu.fa]]
     name = "حلقهٔ رندان"
     identifier = "halghe"
     url = "#"
