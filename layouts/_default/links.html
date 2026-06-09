@@ -2,6 +2,20 @@
 <div class="container container--narrow">
     <div class="page-header"><h1 class="page-header__title">{{ .Title }}</h1></div>
 </div>
+{{ if .Pages }}
+<div class="container">
+    {{ range .Pages.ByDate.Reverse }}
+    <section class="section links-site">
+        <div class="links-site__header">
+            <h2 class="links-site__name">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            {{ with .Params.description }}<p class="links-site__desc">{{ . }}</p>{{ end }}
+        </div>
+    </section>
+    {{ end }}
+</div>
+{{ end }}
 <div class="container">
     {{ range .Params.link_groups }}
     <section class="section links-site">
