@@ -18,6 +18,7 @@
                 {{ with .Params.illustrator }}<span>{{ i18n "illustrator_label" }}: {{ . }}</span>{{ end }}
             </div>
             {{ with .Params.notes }}<p class="featured-work__desc" style="margin-top:1rem">{{ . }}</p>{{ end }}
+            {{ with .Params.buy_link }}<a href="{{ . }}" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top:1rem">خرید کتاب ←</a>{{ end }}
             {{ with .Params.link }}<a href="{{ . }}" target="_blank" rel="noopener" class="btn btn--outline" style="margin-top:1rem">{{ with $.Params.link_text }}{{ . }}{{ else }}↗ مشاهده{{ end }}</a>{{ end }}
         </div>
     </div>
