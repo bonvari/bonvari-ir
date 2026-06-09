@@ -5,3 +5,11 @@ copyright = "© 2026 Mehdi Bonvari. All rights reserved."
 
 [persian_bio]
 other = "← Persian bio"
+[contact_intro]
+other = "You can reach me through the following channels."
+[contact_email_label]
+other = "Email"
+[contact_instagram_label]
+other = "Instagram: @mehdi.bonvari"
+[contact_goodreads_label]
+other = "Goodreads"

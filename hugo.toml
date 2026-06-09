@@ -131,6 +131,10 @@ enableRobotsTXT = true
     name = "About"
     url = "/about/"
     weight = 7
+  [[menu.en]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 75
 
 [params]
   author = "مهدی بنواری"

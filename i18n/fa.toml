@@ -71,3 +71,11 @@ other = "بازگشت به خانه"
 other = "فعالیت‌های حرفه‌ای"
 [english_bio]
 other = "English Bio →"
+[contact_intro]
+other = "برای ارتباط با من می‌توانید از راه‌های زیر اقدام کنید."
+[contact_email_label]
+other = "ایمیل"
+[contact_instagram_label]
+other = "اینستاگرام: mehdi.bonvari@"
+[contact_goodreads_label]
+other = "گودریدز"
