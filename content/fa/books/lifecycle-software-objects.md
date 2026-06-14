@@ -9,7 +9,7 @@ original_author: "تد چیانگ"
 publisher: "فضای استعاره (آنلاین)"
 genre: "علمی‌تخیلی"
 notes: "مجوز ارشاد صادر نشد. با اجازهٔ نویسنده در فضای استعاره منتشر شد."
-link: "https://metaphorspace.com/life-cycle-of-software-objects/"
+link: "https://metaphorspace.com/category/collection/life-cycle-of-software-objects/"
 link_text: "متن کامل را اینجا بخوانید"
 cover: "/img/covers/LCoSO.jpg"
 ---
