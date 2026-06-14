@@ -26,6 +26,10 @@ His work was cited at Chicon 8 (80th World Science Fiction Convention, Chicago, 
 - *The Halloween Tree* — Ray Bradbury (Peydayesh, 2020)
 - *The Lifecycle of Software Objects* — Ted Chiang (Metaphor Space, online)
 
+### Forthcoming
+
+- *The Dying Earth* — Jack Vance — Translation forthcoming from Ketabsaraye Tandis
+
 ### Current Projects
 
 - *Trigger Warning* — Neil Gaiman — Translation complete, editing
