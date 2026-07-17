@@ -3,6 +3,8 @@ toggle_menu = "Toggle menu"
 main_menu = "Main menu"
 copyright = "© 2026 Mehdi Bonvari. All rights reserved."
 
+[hero_subtitle]
+other = "Author, translator and speculative fiction researcher"
 [persian_bio]
 other = "← Persian bio"
 [contact_intro]

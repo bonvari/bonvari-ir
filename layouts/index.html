@@ -4,7 +4,7 @@
     <div class="container">
         <span class="hero__label">{{ i18n "hero_label" }}</span>
         <h1 class="hero__title">{{ .Site.Title }}</h1>
-        <p class="hero__subtitle">{{ .Site.Params.description }}</p>
+        <p class="hero__subtitle">{{ i18n "hero_subtitle" }}</p>
         <div class="hero__cta">
             <a href="{{ "works/" | relLangURL }}" class="btn btn--primary">{{ i18n "cta_works" }}</a>
             <a href="{{ "translations/" | relLangURL }}" class="btn btn--outline">{{ i18n "cta_translations" }}</a>
