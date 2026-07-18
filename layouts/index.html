@@ -47,7 +47,7 @@
         {{ range $notes }}
         <article class="post-card">
             <div class="post-card__body">
-                <span class="post-card__date">{{ .Date | time.Format "2 January 2006" }}</span>
+                <span class="post-card__date">{{ if .Params.jdate }}{{ .Params.jdate }}{{ else }}{{ .Date | time.Format "2 January 2006" }}{{ end }}</span>
                 <h3 class="post-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                 <p class="post-card__excerpt">{{ .Summary | plainify | truncate 120 }}</p>
             </div>

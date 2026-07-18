@@ -2,7 +2,7 @@
 <div class="container container--narrow">
     <div class="page-header">
         <h1 class="page-header__title">{{ .Title }}</h1>
-        {{ if eq .Type "notes" }}<p class="page-header__date">{{ .Date | time.Format "2 January 2006" }}</p>{{ end }}
+        {{ if eq .Type "notes" }}<p class="page-header__date">{{ if .Params.jdate }}{{ .Params.jdate }}{{ else }}{{ .Date | time.Format "2 January 2006" }}{{ end }}</p>{{ end }}
     </div>
     <article class="entry-content">{{ .Content }}</article>
 </div>
