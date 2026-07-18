@@ -29,7 +29,7 @@ enableRobotsTXT = true
     weight = 1
     title = "مهدی بنواری"
     [languages.fa.params]
-      description = "نویسنده، مترجم و پژوهشگر ادبیات گمانه‌زن"
+      description = "مهدی بنواری، نویسنده و مترجم؛ آثار تألیفی، ترجمه‌ها و یادداشت‌ها."
 
   [languages.en]
     locale = "en-US"
@@ -39,7 +39,7 @@ enableRobotsTXT = true
     weight = 2
     title = "Mehdi Bonvari"
     [languages.en.params]
-      description = "Author, translator and speculative fiction researcher"
+      description = "Mehdi Bonvari — author and translator; original works, translations and notes."
 
 # ---------------------------------------------------------------------------
 # Menus (per language)
