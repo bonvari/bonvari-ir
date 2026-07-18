@@ -3,8 +3,6 @@ toggle_menu = "باز/بستن منو"
 main_menu = "منوی اصلی"
 copyright = "© ۱۴۰۱–۱۴۰۵ مهدی بنواری. همهٔ حقوق محفوظ است."
 
-[hero_label]
-other = "نویسنده · مترجم · پژوهشگر"
 [hero_subtitle]
 other = "نویسنده و مترجم"
 [cta_works]
