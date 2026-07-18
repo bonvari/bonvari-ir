@@ -353,6 +353,7 @@ body.ltr-page .section__more::after { content: '→'; }
 .entry-content li { margin-bottom: 0.5rem; }
 .entry-content a { text-decoration: underline; text-underline-offset: 2px; }
 .entry-content p, .entry-content li { text-align: justify; text-justify: inter-word; }
+.featured-work__desc, .links-site__desc, .media-tile__desc { text-align: justify; text-justify: inter-word; }
 
 /* Tables */
 .entry-content .table-wrap {
