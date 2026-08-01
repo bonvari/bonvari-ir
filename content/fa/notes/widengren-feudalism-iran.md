@@ -4,6 +4,7 @@ slug: "widengren-feudalism-iran"
 date: 2026-08-01
 jdate: "۱۰ مرداد ۱۴۰۵"
 description: "معرفی کتاب «فئودالیسم در ایران باستان» اثر گئو ویدن‌گرن؛ رازِ کمربند، پیمانِ واسالی، جنگاورانِ گرگ‌نما و ریشه‌های آیینیِ کشتی در ایران باستان."
+image: /img/widengren-feudalism-iran/01.webp
 draft: false
 tags:
   - ایران باستان
